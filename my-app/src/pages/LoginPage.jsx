@@ -60,7 +60,7 @@ function LoginPage(props) {
         const emailCurrent = email.target.value;
         setEmail(emailCurrent)
 
-        if (!emailCurrent.length) {
+        if (emailCurrent === '') {
             setEmailMessage('*이메일을 입력해주세요.');
             return;
         }
@@ -80,7 +80,7 @@ function LoginPage(props) {
         const passwordCurrent = password.target.value
         setPassword(passwordCurrent)
 
-        if (!passwordCurrent.length) {
+        if (passwordCurrent === '') {
             setPasswordMessage('*비밀번호를 입력해주세요.')
             setIsPassword(false);
             return;
@@ -135,7 +135,6 @@ function LoginPage(props) {
             <form className='loginForm'>
                 <TextLabel>이메일</TextLabel>
                 <EmailInput
-                    typeName='email'
                     onChange={onChangeEmail}
                 />
                 {emailMessage && (
@@ -143,7 +142,6 @@ function LoginPage(props) {
                 )}
                 <TextLabel>비밀번호</TextLabel>
                 <PassWordInput
-                    typeTitle="password"
                     onChange={onChangePassword} />
                 {passwordMessage && (
                     <ErrorMessage>{passwordMessage}</ErrorMessage>
