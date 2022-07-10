@@ -61,7 +61,7 @@ function LoginPage(props) {
         setEmail(emailCurrent)
 
         if (!emailCurrent.length) {
-            setEmailMessage('*필수 입력사항입니다.');
+            setEmailMessage('*이메일을 입력해주세요.');
             return;
         }
 
@@ -81,12 +81,12 @@ function LoginPage(props) {
         setPassword(passwordCurrent)
 
         if (!passwordCurrent.length) {
-            setPasswordMessage('*필수 입력사항입니다.')
+            setPasswordMessage('*비밀번호를 입력해주세요.')
             setIsPassword(false);
             return;
         }
         if (passwordCurrent.length < 6) {
-            setPasswordMessage('*비밀번호는 6자 이상이어야 합니다.');
+            setPasswordMessage('*비밀번호를 6자 이상 입력해주세요.');
             setIsPassword(false);
             return;
         }
